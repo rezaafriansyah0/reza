@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>Pelatihan ITATS</title>
+        <style>
+            .text_content{
+                text-indent: 60px;
+            }
+            body{
+                background-image: url(paper_boat-540x337.png);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            p{
+                color: black;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            
+        </nav>
+        <H1>
+            
+            <b><center>Empowering Digital Society</b></center>
+        </H1>
+        
+        <p class="text_content"> Sudah tau belum bahwasannya ITATS sedang mengadakan <b>Pelatihan Android dan Digital Marketing(Bisnis) </b> untuk generasi <i> Milenial </i> dalam menghadapi <i>Perkembangan Industri 4.0. </i>
+        <br>
+        Semakin pesatnya perkembangan <i>teknologi</i> pada zaman serba digital ini kita perlu nih mengadakan persiapan diri kita loh. Dalam menghadapi persaingan dunia <i>Teknologi</i> ITATS memberikan Pelatihan gratis nih.
+    </p>
+
+        <br>
+        <a href="gambar1.html"><img src="DSC_0131.jpg" width="500px" height="250px"></a>
+        <a href="gambar2.html"><right><img src="pelatihan.jpg" width="500px" height="250px"></right></a>
+        </img>
+
+        <br>
+        <p class="text_context"> <b>diatas adalah contoh gambar dari pelatihan Pemrograman dari sekolah SMA&SMK serta mahasiswa Sistem Informasi dari ITATS untuk membantu pelatihan tersebut </b></p>
+        <table border="2">
+            <tr>
+                <td>Nama Pelatihan :</td>
+                <td>Empowering Digital Society</td>
+            </tr>
+            <tr>
+                <td> Tempat Pelatihan :</td>
+                <td>ITATS,Gedung H<br>RuangMagister Teknik Industri</td>
+            </tr>
+            <tr>
+                <td>Tanggal dan Jam Pelaksanaan :</td>
+                <td>22 Februari 2020<br>08.00-Selesai</td>
+            </tr>
+        </table>
+        <br>
+        <p class="Text_context"> Berikut Nama-Nama SMA&SMK yang hadir dalam acara tersebut :</p>
+        <br>
+        <ol>
+            <li>SMK 5 Surabaya</li>
+            <li>SMK Rajasa Surabaya</li>
+            <li>SMK Adhikawacana Surabaya</li>
+            <li>SMA 10 Surabaya</li>
+            <li>SMA 20 Surabaya</li>
+            <li>SMA 2 Surabaya</li>
+            <li>SMA 7 Surabaya</li>
+            <li>SMK Giki 2 Surabaya</li>
+            <li>SMK IPIEMS Surabaya</li>
+            <li>SMK Ketintang Surabaya</li>
+            <li>SMA Muhammadiyah 2 Surabaya</li>
+            <li>MAN 1 Surabaya</li>
+            <li>SMA Muhammadiyah 7 Surabaya</li>
+            <li>SMA 8 Surabaya</li>
+            <li>SMA Hidayatul Ummah Surabaya</li>
+        </ol>
+        <br>
+        <p class="Text_context">Untuk info lebih lanjut bisa hubungi cp berikut :</p>
+        <br>
+        <table border="2">
+            <tr>
+                <td> Whatsapp</td>
+                <td>085950087278</td>
+            </tr>
+            <tr>
+                <td> Line :</td>
+                <td> reza.afriansyah</td>
+            </tr>
+        </table>
+        <br>
+        Fasilitas :
+        
+        <ul>
+            <li>Sertifikat</li>
+            <li>Wifi</li>
+            <li>Snack</li>
+            <li>Ilmu Bermanfaat</li>
+            <li>Teman Baru</li>
+        </ul>
+        <br>
+        Jangan Lupa Follow Instagram Kami :
+        <a href="https://instagram.com/matech.itats?igshid=1mamtxwc2qtkw">Klik Disini</a>
+        <center><h1>Selamat Bergabung Silahkan Login !!!</h1></center>
+        <br>
+        <br>
+        <div id="eror"></div>
+        <form action="login.php" method="POST">
+            <fieldset>
+                <legend>Login</legend>
+                <p>
+                    <label>Username :</label>
+                    <input type="text" name="Username" placeholder="Username..."/>
+                </p>
+                <p>
+                    <label>Password :</label>
+                    <input type="Password" name="Password" placeholder="Password..."/>
+                </p>
+                <p>
+                    <label><input type="checkbox" name="Remember" value="Remember"/> Remember me</label><br>
+                    <a href="pendaftaran.html">do you have no account</a>
+                </p>
+                <input type="submit" name="submit" value="Login" />
+            </fieldset>
+        </form>
+        <div id="hasil"></div>
+        <br>
+        <center><button onclick="loadContent()">Load Content</button></center>
+        <script>
+            function loadContent(){
+                var xhr = new XMLHttpRequest();
+                var url = "https://api.github.com/users/petanikode";
+
+                xhr.onloadstart = function (){
+                    document.GetElementById("button").innerHTML = "Loading...";
+                }
+                xhr.onerror = function (){
+                    alert("gagal mengambil data");
+                };
+                xhr.onloadend = function (){
+                    if(this.responseText !== ""){
+                        var data = JSON.parse(this.responseText);
+                        var img = document.createElement("img");
+                    img.src = data.avatar_url;
+                    var name = document.createElement("h3");
+                    name.innerHTML = data.name;
+
+                    document.getElementById("hasil").append(img, name);
+                    document.getElementById("button").innerHTML = "Done";
+
+                    setTimeout(function () {
+                        document.getElementById("button").innerHTML = "Load Lagi";
+                    }, 3000);
+
+                }
+            };
+
+            xhr.open("GET", url, true);
+            xhr.send();
+        }
+        function clearResult() {
+            document.getElementById("hasil").innerHTML = "";
+        }
+        </script>
+    </body>
+</html>
